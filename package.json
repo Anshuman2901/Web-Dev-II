@@ -1,0 +1,20 @@
+{
+  "name": "first-class",
+  "version": "1.0.0",
+  "description": "intro",
+  "license": "ISC",
+  "author": "yash",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  },
+  "keywords": []
+}
