@@ -1,13 +1,25 @@
-const express = require('express');
+const express = require("express"); // Import Express
 
-const app = express();
+const app = express(); // Create Express application
 
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
+
+const packages = require("./data/tour"); // Import packages data
+
+
+app.get("/", (req, res) => { // Handle GET request to /
+    res.send("Hello World"); // Send response
 });
 
-const PORT = process.env.PORT || 3000;
+app.get("/packages",(req,res)=>{
+    res.json(packages);
+});
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.get("/packages/:id",(req,res)=>{
+    const packageId = parseInt(req.params.id);
+    const selectedPackage = packages.find(item => item.id === packageId);
+    res.json(selectedPackage);
+});
+
+app.listen(3000, () => { // Start server on port 3000
+    console.log("Server is running on port 3000"); // Show confirmation
 });
