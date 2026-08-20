@@ -12,7 +12,18 @@ const getById = (id)=> {
     return tours.find(tour => tour.id === id);
 }
 
+const getByQuery = (query)=> {
+    const tours = getAll();
+    return tours.filter(tour => tour.name.includes(query));
+}
+
+const save = (tours)=> {
+    fs.writeFileSync(toursFilePath, JSON.stringify(tours, null, 2));
+}
+
 module.exports = {
     getAll,
-    getById
+    getById,
+    getByQuery,
+    save
 }
