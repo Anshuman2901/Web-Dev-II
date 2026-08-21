@@ -18,4 +18,9 @@ router.post('/tours', (req, res) => {
 }
 );
 
+router.get('/search', tourController.getTourByQuery);
+router.post('/tours', tourController.saveTour);
+
+
+
 module.exports = router;

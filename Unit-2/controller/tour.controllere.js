@@ -15,15 +15,17 @@ const getTourById = (req, res) => {
     res.json(tour);
 }
 
-const getTourByquery = (req, res) => {
+const getTourByQuery = (req, res) => {
     const query = req.query.name;
     const tours = tourModel.getByquery(query);
     res.json(tours);
 }
 
 
-const saveTour = (tour)=> {
-    tourModel.save(tour);
+const saveTour = (req, res) => {
+    const tour = req.body;
+    tourModel.saveTour(tour);
+    res.status(201).send.json({ message: 'Tour saved successfully' });
 }
 module.exports = {
     getAllTours,
