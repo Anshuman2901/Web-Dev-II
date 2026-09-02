@@ -21,6 +21,7 @@ router.post('/tours', (req, res) => {
 router.get('/search', tourController.getTourByQuery);
 router.post('/tours', tourController.saveTour);
 
-
+router.delete('/:id', tourController.deleteTourById);
+router.put('/:id', tourController.updateTour);
 
 module.exports = router;

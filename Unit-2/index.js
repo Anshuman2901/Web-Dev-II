@@ -3,7 +3,7 @@ const express = require("express"); // Import Express
 const app = express(); // Create Express application
 
 
-const packages = require("./data/tour"); // Import packages data
+const packages = require("./data/tour.json"); // Import packages data
 
 
 app.get("/", (req, res) => { // Handle GET request to /

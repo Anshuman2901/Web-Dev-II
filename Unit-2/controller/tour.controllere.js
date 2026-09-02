@@ -15,6 +15,15 @@ const getTourById = (req, res) => {
     res.json(tour);
 }
 
+const deleteTourById = (req, res) => {
+    const id = parseInt(req.params.id);
+    const result = tourModel.deleteTour(id);
+    if (!result) {
+        return res.status(404).json({ message: 'Tour not found' });
+    }
+    res.json({ message: 'Tour deleted successfully' });
+}
+
 const getTourByQuery = (req, res) => {
     const query = req.query.name;
     const tours = tourModel.getByquery(query);
